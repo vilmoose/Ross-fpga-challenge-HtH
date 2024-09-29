@@ -170,13 +170,14 @@ end
 ///////////////////////////////////////////////////////////////////////////////
 // UUT
 ///////////////////////////////////////////////////////////////////////////////
-wire vid_sel_w = RC_reg_prob[0];
-
+wire vid_sel_color_w = RC_reg_prob[0]; // color select
+wire vid_split_w = RC_reg_prob[1]; // split characters
 
 video_uut video_uut (       
     .clk_i          (vid_clk 		),//               
     .cen_i          (vid_cen 		),//              
-    .vid_sel_i      (vid_sel_w 	),//
+    .vid_sel_color_i (vid_sel_color_w 	),//
+	 .vid_split_i	  (vid_split_w ),//
     .vdat_bars_i    (vdat_bars 	),//[19:0]
     .vdat_colour_i  (vdat_colour ),//[19:0]
     .fvht_i         (fvht_rx 		),//[ 3:0]
